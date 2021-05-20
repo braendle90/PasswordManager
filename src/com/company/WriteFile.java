@@ -30,13 +30,8 @@ public class WriteFile {
 
     public void writeLastID() throws IOException {
 
-
         FileWriter writeID = new FileWriter("src/com/company/config.txt", StandardCharsets.UTF_8, true);
-
-        String name = String.valueOf(createData.getID());
-
-        System.out.println("HALLO: "+createData.getID());
-        writeID.write( name);
+        writeID.write(String.valueOf(createData.getID()));
 
         writeID.close();
 
