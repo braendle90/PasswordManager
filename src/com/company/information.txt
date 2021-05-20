@@ -11,7 +11,7 @@ Password
 webadresse
 ---------------------------------------
 
-Class HashCode
+Class HashCode - FAST ERLEDIGT
 
 parameter(String);
 
