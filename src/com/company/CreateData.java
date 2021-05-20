@@ -2,11 +2,11 @@ package com.company;
 
 public class CreateData {
 
-    int ID;
-    String title;
-    String username;
-    String hashcode;
-    String website;
+    private int ID;
+    private String title;
+    private String username;
+    private String hashcode;
+    private String website;
 
     //CONSTRUCTOR
     public CreateData(int ID, String title, String username, String hashcode, String website) {
