@@ -10,10 +10,8 @@ public class Main {
 
         CreateData cd = new CreateData(123,"abc","hans","879diojkf","fb.me");
 
-
         WriteFile writeFile = new WriteFile(cd);
         writeFile.writeInformationToFile();
-
 
         ReadFile rf = new ReadFile(1);
 

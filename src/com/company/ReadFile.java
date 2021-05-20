@@ -19,12 +19,18 @@ public class ReadFile {
 
     public List<String> getFileFromDatabase() throws IOException {
 
+        int index = 0;
+
+
         BufferedReader reader = new BufferedReader(new FileReader(Main.fileLocation));
 
         while ((currentLine = reader.readLine()) != null) {
-            if (currentLine.contains(findID)) {
-                loginInformation = Arrays.asList(currentLine.split(","));
-                //System.out.println("Zeile ist: " + loginInformation);
+            index++;
+            loginInformation = Arrays.asList(currentLine.split(","));
+
+            if (loginInformation.get(0).equals(findID)) {
+
+                System.out.println("Zeile ist: " + loginInformation.get(0));
 
             }
         }
