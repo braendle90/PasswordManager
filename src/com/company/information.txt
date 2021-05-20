@@ -1,0 +1,32 @@
+
+
+---------------------------------------
+
+Class AddPassword
+
+ID
+Title
+username or email
+Password
+webadresse
+---------------------------------------
+
+Class HashCode
+
+---------------------------------------
+
+Class ReadFile
+
+liest die Text datei bei starten ein.
+
+
+---------------------------------------
+
+Class WriteFile
+
+schreibt das Passwort in hash in eine .txt datei
+---------------------------------------
+
+
+
+
