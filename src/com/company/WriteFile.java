@@ -7,10 +7,16 @@ import java.util.List;
 
 public class WriteFile {
 
-    private String loginInformation;
+    private CreateData createData;
 
-    public WriteFile(String loginInformation) {
-        this.loginInformation = loginInformation;
+    private String data;
+
+    public WriteFile(CreateData cd) {
+        this.createData = cd;
+
+
+
+
     }
 
     public void writeInformationToFile() throws IOException {
@@ -18,14 +24,27 @@ public class WriteFile {
 
         FileWriter writer = new FileWriter(Main.fileLocation, StandardCharsets.UTF_8, true);
 
-        writer.write("\n" + loginInformation);
+        //writer.write("\n" + createData);
+
+
+        writer.write("\n"+ createData.toString() );
+
 
         writer.close();
 
 
-
     }
 
+    public String ObjectToString() {
+
+        data = createData.getID()+ createData.getTitle()+createData.getUsername()+createData.getHashcode()+ createData.getWebsite();
+
+
+
+        return data;
+
+
+    }
 
 
 }

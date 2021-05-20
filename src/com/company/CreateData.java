@@ -58,4 +58,10 @@ public class CreateData {
         this.website = website;
     }
     //endregion
+
+
+    @Override
+    public String toString() {
+        return this.ID + "," + this.title + "," + this.username + "," + this.hashcode + "," + this.website;
+    }
 }

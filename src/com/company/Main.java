@@ -8,11 +8,12 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        CreateData cd = new CreateData(123,"abc","hans","879diojkf","fb.me");
 
-        String information = "2,Instagram,max,7890oiujh,insta.me";
 
-        WriteFile writeFile = new WriteFile(information);
+        WriteFile writeFile = new WriteFile(cd);
         writeFile.writeInformationToFile();
+
 
         ReadFile rf = new ReadFile(1);
 
