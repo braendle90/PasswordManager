@@ -4,8 +4,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class HashCode {
-
-    public String setSecurePassword(String pw) throws NoSuchAlgorithmException {
+    //region BESCHREIBUNG
+    //  Mit HashCode.setSecurePassword("Password") returniert Hash value
+    //endregion
+    public static String setSecurePassword(String pw) throws NoSuchAlgorithmException {
         try{
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(pw.getBytes("utf-8"));
@@ -23,9 +25,4 @@ public class HashCode {
         }
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-
-        HashCode hc = new HashCode();
-        System.out.println(hc.setSecurePassword("max"));
-    }
 }
