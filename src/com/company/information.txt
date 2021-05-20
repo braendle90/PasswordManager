@@ -13,9 +13,15 @@ webadresse
 
 Class HashCode
 
+parameter(String);
+
+return String ;
+
 ---------------------------------------
 
 Class ReadFile
+
+parameter (String);
 
 liest die Text datei bei starten ein.
 
@@ -24,7 +30,13 @@ liest die Text datei bei starten ein.
 
 Class WriteFile
 
+void
+
+parameter (HashCode.toHashString);
+
 schreibt das Passwort in hash in eine .txt datei
+
+
 ---------------------------------------
 
 
