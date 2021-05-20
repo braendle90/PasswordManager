@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 public class CreateNewPassword extends javax.swing.JFrame {
     private JPanel Background;
@@ -46,7 +47,12 @@ public class CreateNewPassword extends javax.swing.JFrame {
                 int id = Integer.parseInt(ReadFile.readLastID()) + 1;
 
 
-                CreateData cd = new CreateData(id, TITLETextField.getText(), USERNAMETextField.getText(), PASSWORTTextField.getText(), WEBSITETextField.getText());
+                CreateData cd = null;
+                try {
+                    cd = new CreateData(id, TITLETextField.getText(), USERNAMETextField.getText(), HashCode.setSecurePassword(PASSWORTTextField.getText()), WEBSITETextField.getText());
+                } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
+                    noSuchAlgorithmException.printStackTrace();
+                }
                 WriteFile writeFile = new WriteFile(cd);
                 try {
                     writeFile.writeInformationToFile();
