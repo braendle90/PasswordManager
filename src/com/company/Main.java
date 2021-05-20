@@ -5,15 +5,17 @@ import java.io.IOException;
 public class Main {
 
     static String fileLocation = "src/com/company/database.txt";
+    static String IdLocation = "src/com/company/config.txt";
+
 
     public static void main(String[] args) throws IOException {
 
-        CreateData cd = new CreateData(124,"abc","hans","879diojkf","fb.me");
 
-        WriteFile writeFile = new WriteFile(cd);
-        writeFile.writeInformationToFile();
-        writeFile.writeLastID();
 
+        CreateNewPassword createNewPassword = new CreateNewPassword();
+        createNewPassword.setSize(800, 600);
+        createNewPassword.setVisible(true);
+        createNewPassword.ActionListenerCreate();
 
 
 

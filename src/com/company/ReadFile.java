@@ -42,4 +42,30 @@ public class ReadFile {
 
     }
 
+    public static String readLastID()  {
+
+
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(Main.IdLocation));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String id = null;
+        try {
+            id = reader.readLine();
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+        return id;
+
+
+    }
+
 }

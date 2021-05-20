@@ -2,11 +2,14 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
-public class CreateNewPassword extends javax.swing.JFrame{
+public class CreateNewPassword extends javax.swing.JFrame {
     private JPanel Background;
-    private JButton button1;
-    private JButton button2;
+    private JButton createPasswordButton;
+    private JButton resetButton;
     private JTextField TITLETextField;
     private JTextField USERNAMETextField;
     private JTextField PASSWORTTextField;
@@ -16,15 +19,42 @@ public class CreateNewPassword extends javax.swing.JFrame{
     private JLabel lbl_password;
     private JLabel lbl_website;
 
-    public CreateNewPassword(){
-        super("test");
+
+    public CreateNewPassword() {
+
+        super("Create Password");
         this.setContentPane(this.Background);
         this.pack();
+
     }
 
     public static void main(String[] args) {
         CreateNewPassword createNewPassword = new CreateNewPassword();
-        createNewPassword.setSize(800,600);
+        createNewPassword.setSize(800, 600);
         createNewPassword.setVisible(true);
+
+
+
+    }
+
+    public void ActionListenerCreate(){
+
+        createPasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)  {
+
+                int id = Integer.parseInt(ReadFile.readLastID()) + 1;
+
+
+                CreateData cd = new CreateData(id, TITLETextField.getText(), USERNAMETextField.getText(), PASSWORTTextField.getText(), WEBSITETextField.getText());
+                WriteFile writeFile = new WriteFile(cd);
+                try {
+                    writeFile.writeInformationToFile();
+                    writeFile.writeLastID();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        });
     }
 }
