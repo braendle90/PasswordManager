@@ -8,14 +8,15 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        CreateData cd = new CreateData(123,"abc","hans","879diojkf","fb.me");
+        CreateData cd = new CreateData(124,"abc","hans","879diojkf","fb.me");
 
         WriteFile writeFile = new WriteFile(cd);
         writeFile.writeInformationToFile();
+        writeFile.writeLastID();
 
-        ReadFile rf = new ReadFile(1);
 
-        System.out.println(rf.getFileFromDatabase().get(1));
+
+
 
 
     }

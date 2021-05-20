@@ -15,8 +15,6 @@ public class WriteFile {
         this.createData = cd;
 
 
-
-
     }
 
     public void writeInformationToFile() throws IOException {
@@ -24,22 +22,23 @@ public class WriteFile {
 
         FileWriter writer = new FileWriter(Main.fileLocation, StandardCharsets.UTF_8, true);
 
-        writer.write("\n"+ createData.toString() );
-
+        writer.write("\n" + createData.toString());
 
         writer.close();
 
-
     }
 
-    public String ObjectToString() {
-
-        data = createData.getID()+ createData.getTitle()+createData.getUsername()+createData.getHashcode()+ createData.getWebsite();
+    public void writeLastID() throws IOException {
 
 
+        FileWriter writeID = new FileWriter("src/com/company/config.txt", StandardCharsets.UTF_8, true);
 
-        return data;
+        String name = String.valueOf(createData.getID());
 
+        System.out.println("HALLO: "+createData.getID());
+        writeID.write( name);
+
+        writeID.close();
 
     }
 
