@@ -40,26 +40,23 @@ public class CreateNewPassword extends javax.swing.JFrame {
 
     public void ActionListenerCreate(){
 
-        createPasswordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e)  {
+        createPasswordButton.addActionListener(e -> {
 
-                int id = Integer.parseInt(ReadFile.readLastID()) + 1;
+            int id = Integer.parseInt(ReadFile.readLastID()) + 1;
 
 
-                CreateData cd = null;
-                try {
-                    cd = new CreateData(id, TITLETextField.getText(), USERNAMETextField.getText(), HashCode.setSecurePassword(PASSWORTTextField.getText()), WEBSITETextField.getText());
-                } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
-                    noSuchAlgorithmException.printStackTrace();
-                }
-                WriteFile writeFile = new WriteFile(cd);
-                try {
-                    writeFile.writeInformationToFile();
-                    writeFile.writeLastID();
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+            CreateData cd = null;
+            try {
+                cd = new CreateData(id, TITLETextField.getText(), USERNAMETextField.getText(), HashCode.setSecurePassword(PASSWORTTextField.getText()), WEBSITETextField.getText());
+            } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
+                noSuchAlgorithmException.printStackTrace();
+            }
+            WriteFile writeFile = new WriteFile(cd);
+            try {
+                writeFile.writeInformationToFile();
+                writeFile.writeLastID();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
             }
         });
     }
