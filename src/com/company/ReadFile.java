@@ -31,15 +31,12 @@ public class ReadFile {
             if (loginInformation.get(0).equals(findID)) {
 
                 System.out.println("Zeile ist: " + loginInformation.get(0));
-
             }
         }
 
         reader.close();
 
         return loginInformation;
-
-
     }
 
     public static String readLastID()  {
