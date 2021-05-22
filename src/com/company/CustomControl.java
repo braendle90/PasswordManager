@@ -21,5 +21,45 @@ public class CustomControl extends JFrame {
         this.setContentPane(customPanel);
         this.pack();
     }
+
+    public JTextField getTxt_CPanel_Title() {
+        return txt_CPanel_Title;
+    }
+
+    public void setTxt_CPanel_Title(JTextField txt_CPanel_Title) {
+        this.txt_CPanel_Title = txt_CPanel_Title;
+    }
+
+    public JTextField getTxt_CPanel_username() {
+        return txt_CPanel_username;
+    }
+
+    public void setTxt_CPanel_username(JTextField txt_CPanel_username) {
+        this.txt_CPanel_username = txt_CPanel_username;
+    }
+
+    public JTextField getTxt_CPanel_password() {
+        return txt_CPanel_password;
+    }
+
+    public void setTxt_CPanel_password(JTextField txt_CPanel_password) {
+        this.txt_CPanel_password = txt_CPanel_password;
+    }
+
+    public JTextField getTxt_CPanel_website() {
+        return txt_CPanel_website;
+    }
+
+    public void setTxt_CPanel_website(JTextField txt_CPanel_website) {
+        this.txt_CPanel_website = txt_CPanel_website;
+    }
+
+    public JLabel getLbl_cPanel_ID() {
+        return lbl_cPanel_ID;
+    }
+
+    public void setLbl_cPanel_ID(JLabel lbl_cPanel_ID) {
+        this.lbl_cPanel_ID = lbl_cPanel_ID;
+    }
 }
 
