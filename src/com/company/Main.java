@@ -16,5 +16,8 @@ public class Main {
         createNewPassword.setSize(800, 600);
         createNewPassword.setVisible(true);
         createNewPassword.ActionListenerCreate();
+
+
+
     }
 }

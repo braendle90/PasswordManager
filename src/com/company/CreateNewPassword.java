@@ -2,8 +2,7 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
@@ -20,30 +19,51 @@ public class CreateNewPassword extends javax.swing.JFrame {
     private JLabel lbl_password;
     private JLabel lbl_website;
 
-
     public CreateNewPassword() {
 
         super("Create Password");
         this.setContentPane(this.Background);
         this.pack();
+        createPasswordButton.setEnabled(false);
 
+
+        resetButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TITLETextField.setText("");
+                USERNAMETextField.setText("");
+                PASSWORTTextField.setText("");
+                WEBSITETextField.setText("");
+
+            }
+        });
+
+        TITLETextField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+                checkIfTextHasInput();
+            }
+        });
     }
 
-    public static void main(String[] args) {
-        CreateNewPassword createNewPassword = new CreateNewPassword();
-        createNewPassword.setSize(800, 600);
-        createNewPassword.setVisible(true);
+    public void checkIfTextHasInput() {
 
+        if (TITLETextField.getText().length() == 0) {
+            createPasswordButton.setEnabled(false);
 
-
+        }
+        if (TITLETextField.getText().length() >= 1) {
+            createPasswordButton.setEnabled(true);
+        }
     }
 
-    public void ActionListenerCreate(){
+
+    public void ActionListenerCreate() {
 
         createPasswordButton.addActionListener(e -> {
-
             int id = Integer.parseInt(ReadFile.readLastID()) + 1;
-
 
             CreateData cd = null;
             try {
@@ -59,5 +79,8 @@ public class CreateNewPassword extends javax.swing.JFrame {
                 ioException.printStackTrace();
             }
         });
+
     }
+
+
 }
