@@ -35,8 +35,8 @@ public class MainFrame extends JFrame {
         });
 
         btn_createLogin.addActionListener(e -> {
-            CreateNewPassword createNewPassword = new CreateNewPassword();
-            createNewPassword.setSize(800, 600);
+            CreateNewPassword createNewPassword = new CreateNewPassword(600,800);
+
             createNewPassword.setVisible(true);
             createNewPassword.ActionListenerCreate();
         });

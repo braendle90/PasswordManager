@@ -12,9 +12,9 @@ public class Main {
 
 
 
-        CreateNewPassword createNewPassword = new CreateNewPassword();
-        createNewPassword.setSize(800, 600);
-        createNewPassword.setVisible(true);
+        CreateNewPassword createNewPassword = new CreateNewPassword(600,800);
+
+
         createNewPassword.ActionListenerCreate();
 
 

@@ -19,12 +19,14 @@ public class CreateNewPassword extends javax.swing.JFrame {
     private JLabel lbl_password;
     private JLabel lbl_website;
 
-    public CreateNewPassword() {
+    public CreateNewPassword(int x ,int y) {
 
         super("Create Password");
         this.setContentPane(this.Background);
         this.pack();
         createPasswordButton.setEnabled(false);
+        this.setSize(x,y);
+        this.setVisible(true);
 
 
         resetButton.addActionListener(new ActionListener() {
@@ -35,6 +37,7 @@ public class CreateNewPassword extends javax.swing.JFrame {
                 USERNAMETextField.setText("");
                 PASSWORTTextField.setText("");
                 WEBSITETextField.setText("");
+                createPasswordButton.setEnabled(false);
 
             }
         });
