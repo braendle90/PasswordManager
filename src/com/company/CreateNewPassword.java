@@ -69,11 +69,9 @@ public class CreateNewPassword extends javax.swing.JFrame {
             int id = Integer.parseInt(ReadFile.readLastID()) + 1;
 
             CreateData cd = null;
-            try {
-                cd = new CreateData(id, TITLETextField.getText(), USERNAMETextField.getText(), HashCode.setSecurePassword(PASSWORTTextField.getText()), WEBSITETextField.getText());
-            } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
-                noSuchAlgorithmException.printStackTrace();
-            }
+
+                cd = new CreateData(id, TITLETextField.getText(), USERNAMETextField.getText(), PASSWORTTextField.getText(), WEBSITETextField.getText());
+
             WriteFile writeFile = new WriteFile(cd);
             try {
                 writeFile.writeInformationToFile();
